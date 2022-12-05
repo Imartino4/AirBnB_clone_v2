@@ -51,7 +51,7 @@ class DBStorage:
                     new_dict[key] = obj
         return (new_dict)
 
-def get(self, cls, id):
+    def get(self, cls, id):
         """This method retrieve one object"""
         list_objs = self.__session.query(cls).all()
         for inst in list_objs:
@@ -62,7 +62,7 @@ def get(self, cls, id):
 
     def count(self, cls=None):
         """Count number of cls objects in storage
-           if cls is None, count all objects"""
+        if cls is None, count all objects"""
         count = 0
         if cls in classes.values():
             list_objs = self.__session.query(cls).all()
