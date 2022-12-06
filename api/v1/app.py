@@ -5,14 +5,9 @@ from models import storage
 from api.v1.views import app_views
 from os import getenv
 
-try:
-    host = os.getenv('HBNB_API_HOST')
-except:
-    host = '0.0.0.0'
-try:
-    port = int(os.getenv('HBNB_API_PORT'))
-except:
-    port = 5000
+host = getenv('HBNB_API_HOST', '0.0.0.0')
+port = int(getenv('HBNB_API_PORT', '5000'))
+
 
 
 app = Flask(__name__)
