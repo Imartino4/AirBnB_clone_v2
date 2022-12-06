@@ -19,6 +19,7 @@ def status():
     """ Return status """
     return {"status": "OK"}
 
+
 @app_views.route('/stats')
 def counter():
     """Retrieves the number of each obj by type"""
