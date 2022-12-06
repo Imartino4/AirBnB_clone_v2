@@ -14,6 +14,12 @@ app.register_blueprint(app_views)
 app.url_map.strict_slashes = False
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    """Error 404"""
+    return {"error": "Not found"}
+    
+
 @app.teardown_appcontext
 def teardown(error):
     """Close"""
