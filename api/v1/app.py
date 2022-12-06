@@ -10,7 +10,7 @@ try:
 except:
     host = '0.0.0.0'
 try:
-    port = os.getenv('HBNB_API_PORT')
+    port = int(os.getenv('HBNB_API_PORT'))
 except:
     port = 5000
 
