@@ -4,6 +4,7 @@ from flask import Flask
 from models import storage
 from api.v1.views import app_views
 from os import getenv
+from flask import jsonify
 
 host = getenv('HBNB_API_HOST', '0.0.0.0')
 port = int(getenv('HBNB_API_PORT', '5000'))
@@ -17,8 +18,8 @@ app.url_map.strict_slashes = False
 @app.errorhandler(404)
 def page_not_found(e):
     """Error 404"""
-    return {"error": "Not found"}
-    
+    return jsonify({"error": "Not found"})
+
 
 @app.teardown_appcontext
 def teardown(error):
