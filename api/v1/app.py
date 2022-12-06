@@ -16,10 +16,9 @@ app.url_map.strict_slashes = False
 
 
 @app.errorhandler(404)
-@app.errorhandler(405)
 def page_not_found(e):
     """Error 404"""
-    return jsonify({"error": "Not found"})
+    return jsonify({"error": "Not found"}), 404
 
 
 @app.teardown_appcontext
