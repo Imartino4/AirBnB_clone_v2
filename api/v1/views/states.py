@@ -16,11 +16,11 @@ def get_obj(s_id=None):
     if s_id is None:
         for state_objs in storage.all(State).values():
             dict_list.append(state_objs.to_dict())
-        return dict_list
+        return jsonify(dict_list)
     else:
         for k, v in storage.all(State).items():
             if v.id == s_id:
-                return (v.to_dict())
+                return jsonify(v.to_dict())
     abort(404)
 
 

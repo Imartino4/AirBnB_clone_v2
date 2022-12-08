@@ -57,7 +57,6 @@ class DBStorage:
         for inst in list_objs:
             if inst.id == id:
                 return(inst)
-                break
         return(None)
 
     def count(self, cls=None):
