@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""cities file"""
+"""amenities file"""
 from api.v1.views import app_views
 from flask import jsonify, request, abort
 from models.amenity import Amenity
