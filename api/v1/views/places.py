@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Flask api module for places"""
+"""api module for places"""
 from api.v1.views import app_views
 from flask import jsonify, request, abort
 from models.place import Place
