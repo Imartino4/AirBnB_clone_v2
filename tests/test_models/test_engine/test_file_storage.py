@@ -116,6 +116,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test_count(self):
         """Test on count method"""
+        storage = FileStorage()
         c1 = storage.count(State)
         new_state = State()
         c2 = storage.count(State)
