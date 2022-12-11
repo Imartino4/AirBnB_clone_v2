@@ -98,7 +98,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test_get(self):
         """Test on get method"""
-        user1 = User()'
+        user1 = User()
         user1.name = 'Raul'
         user1.id = 1
         models.storage.new(user1)
