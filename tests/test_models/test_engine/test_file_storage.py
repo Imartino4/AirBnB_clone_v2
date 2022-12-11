@@ -6,7 +6,6 @@ Contains the TestFileStorageDocs classes
 from datetime import datetime
 import inspect
 import models
-from models import storage
 from models.engine import file_storage
 from models.amenity import Amenity
 from models.base_model import BaseModel
@@ -129,8 +128,7 @@ class TestFileStorage(unittest.TestCase):
     def test_get(self):
         """Test on get method"""
         user1 = User()
-        user1.id = '1'
         models.storage.new(user1)
         models.storage.save()
-        test = models.storage.get(User, '1')
+        test = models.storage.get(User, user1.id)
         self.assertEqual(user1, test)
