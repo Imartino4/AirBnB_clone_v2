@@ -99,11 +99,11 @@ class TestFileStorage(unittest.TestCase):
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_get(self):
         """Test on get method"""
-        user1 = User(name='Raul')
-        models.storage.new(user1)
+        am1 = Amenity(name='A/C')
+        models.storage.new(am1)
         models.storage.save()
-        test = models.storage.get(User, user1.id)
-        self.assertEqual(user1, test)
+        test = models.storage.get(Amenity, am1.id)
+        self.assertEqual(am1, test)
 
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_delete_(self):

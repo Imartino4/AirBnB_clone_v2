@@ -127,8 +127,8 @@ class TestFileStorage(unittest.TestCase):
     @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
     def test_get(self):
         """Test on get method"""
-        user2 = User(name="Walter")
-        models.storage.new(user2)
+        am2 = Amenity(name="Spa")
+        models.storage.new(am2)
         models.storage.save()
-        test = models.storage.get(User, user2.id)
-        self.assertEqual(user2, test)
+        test = models.storage.get(Amenity, am2.id)
+        self.assertEqual(am2, test)
