@@ -119,7 +119,6 @@ class TestFileStorage(unittest.TestCase):
         """Test on count method"""
         c1 = models.storage.count(State)
         new_state = State()
-        models.storage.new(new_state)
         models.storage.save()
         c2 = models.storage.count(State)
         self.assertEqual(c1, c2 - 1)
@@ -128,7 +127,6 @@ class TestFileStorage(unittest.TestCase):
     def test_get(self):
         """Test on get method"""
         user1 = User()
-        models.storage.new(user1)
         models.storage.save()
         test = models.storage.get(User, user1.id)
         self.assertEqual(user1, test)
